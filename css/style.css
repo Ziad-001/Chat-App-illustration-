@@ -1,0 +1,350 @@
+/* Global Rules */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --purple-300: hsl(276, 100%, 81%);
+    /* sub-heading at the top of the app UI */
+    --purple-600: hsl(276, 55%, 52%);
+    /* chat on the left */
+    --gray-500: hsl(270, 7%, 64%);
+    /* chat on the right, paragraph */
+    --gray-300: hsl(206, 6%, 79%);
+    /* placeholder text */
+    --purple-950: hsl(271, 36%, 24%);
+    /* main heading */
+    --pink-500: hsl(293, 100%, 63%);
+    --purple-500: hsl(264, 100%, 61%);
+    /* background */
+
+    --white: hsl(0, 100%, 100%);
+    --gray-100: hsl(270, 20%, 96%);
+    /* App Background */
+    --purple-950-button: hsl(271, 36%, 24%);
+    /* submit button background */
+    --pink-400: hsl(289, 100%, 72%);
+    /* radio button outline */
+}
+
+body {
+    position: relative;
+    font-family: "Rubik", sans-serif;
+    background-color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Sides Backgrounds */
+
+.background-left,
+.background-right {
+    position: absolute;
+    z-index: -1;
+    width: 38.3%;
+    height: 40em;
+    background-image: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+}
+
+.background-left {
+    left: -8em;
+    top: 0;
+    border-radius: 0 0 20em 20em;
+}
+
+.background-right {
+    bottom: -8em;
+    right: -10em;
+    opacity: 0.09;
+    border-radius: 20em 20em 0 0;
+}
+
+/* Main Content */
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5rem;
+}
+
+/* Description */
+
+.description {
+    max-width: 28.5em;
+}
+
+.description h1 {
+    color: var(--purple-950);
+    font-weight: 500;
+    font-size: 2.4em;
+}
+
+.description p {
+    color: var(--gray-500);
+    padding-top: 1em;
+    line-height: 1.5;
+}
+
+/* Phone */
+
+.phone {
+    width: 18em;
+    margin: 4em 2em 3em;
+    height: auto;
+    background-color: var(--white);
+    border-radius: 2em;
+    border: 0.9em solid var(--white);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.phone:hover {
+    transform: scale(1.06);
+}
+
+/* App */
+
+.phone-header {
+    display: flex;
+    align-items: center;
+    padding: 1.5em 0.8em 0.2em;
+    gap: 0.5em;
+    width: 16em;
+    height: 4.2em;
+    background-image: linear-gradient(270deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+    border-radius: 1em 1em 0.5em 0.5em;
+
+}
+
+.notch {
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    top: 0px;
+    height: 1em;
+    border-radius: 0 0 1em 1em;
+    background-color: var(--white);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 1em 0;
+    width: 100%;
+    color: var(--white);
+    position: relative;
+}
+
+
+.user-info .fa-chevron-left {
+    width: 20px;
+    height: 20px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.user-info .fa-ellipsis-vertical {
+    margin-right: 0em;
+    margin-left: auto;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.user-info img {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.user-text {
+    margin-left: 0.7em;
+}
+
+.user-info .user-text h2 {
+    font-size: 12px;
+    color: var(--white);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.user-text p {
+    font-size: 8px;
+    font-weight: 0.7em;
+    color: var(--purple-300);
+}
+
+/* Chat */
+
+.chat-area {
+    background-color: var(--gray-100);
+    border-radius: 1em;
+    width: 16em;
+    padding: 0.7em;
+}
+
+.message {
+    max-width: 60%;
+    padding: 0.5em 0.6em;
+    font-size: 0.6em;
+    border-radius: 1em 1em 1em 0.2em;
+    margin-top: 1em;
+}
+
+.left-message {
+    background-color: hsl(268 48% 93% / 1);
+    color: var(--purple-600);
+}
+
+.third-message {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: auto;
+    gap: 1em;
+}
+
+.third-message img {
+    width: 4em;
+    height: 4em;
+    border-radius: 0.8em;
+    margin: 0.4em 0 0 0;
+    cursor: pointer;
+}
+
+.right-message {
+    margin: 0 0 1em auto;
+    border-radius: 1em 1em 0.2em 1em;
+    background-color: var(--white);
+    color: var(--gray-500);
+    padding: 1em;
+}
+
+.fifth-message {
+    max-width: 50%;
+}
+
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(45deg, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+    color: var(--white);
+    padding: 0.8em 1em;
+    margin: 0.8em 0;
+    border-radius: 1em 1em 1em 0.2em;
+    font-size: 0.75em;
+    max-width: 80%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option:hover {
+    transform: scale(1.02);
+}
+
+.option-left {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+}
+
+.radio-button {
+    position: relative;
+    width: 1em;
+    height: 1em;
+    border: 1px solid var(--pink-400);
+    border-radius: 50%;
+}
+
+.radio-button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: var(--pink-400);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.option:hover .radio-button::after {
+    width: 60%;
+    height: 60%;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 0.9em;
+}
+
+
+input {
+    height: 2.5em;
+    padding-left: 1em;
+    padding-right: 3em;
+    width: 100%;
+    border-radius: 2em;
+    border: none;
+}
+
+input::placeholder {
+    color: var(--gray-300);
+}
+
+form {
+    position: relative;
+}
+
+form i {
+    position: absolute;
+    right: 0.3em;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--purple-950);
+    color: var(--white);
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    line-height: 2em;
+    cursor: pointer;
+    text-align: center;
+    align-content: center;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .description {
+        max-width: 90%;
+        text-align: center;
+        margin: 0 auto 3em auto;
+    }
+
+    .background-left {
+        left: -11rem;
+        width: 100%;
+    }
+
+    .background-right {
+        display: none;
+    }
+}
